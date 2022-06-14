@@ -26,3 +26,5 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Build Dockerfile
       run: docker build -t nikosnikolaidis/test_cicd .
+    - name: Docker Publish
+      run: docker pushnikosnikolaidis/test_cicd
