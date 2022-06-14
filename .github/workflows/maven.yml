@@ -25,4 +25,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build Dockerfile
-      run: docker build -t nikosnikolaidis/testCICD .
+      run: docker build -t nikosnikolaidis/test_cicd .
