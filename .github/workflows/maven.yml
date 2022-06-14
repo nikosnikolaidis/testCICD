@@ -27,4 +27,4 @@ jobs:
     - name: Build Dockerfile
       run: docker build -t nikosnikolaidis/test_cicd .
     - name: Docker Publish
-      run: docker pushnikosnikolaidis/test_cicd
+      run: docker push nikosnikolaidis/test_cicd
