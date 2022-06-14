@@ -26,5 +26,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Build Dockerfile
       run: docker build -t nikosnikolaidis/test_cicd .
+    - name: Docker Login
+      run: docker login -u nikosnikolaidis -p ${{ secrets.DOCKER_TOKEN }}
     - name: Docker Publish
       run: docker push nikosnikolaidis/test_cicd
