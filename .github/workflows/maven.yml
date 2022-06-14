@@ -25,8 +25,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build Dockerfile
-      run: docker build -t nikosnikolaidis/test_cicd .
-    - name: Docker Login
-      run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u nikosnikolaidis --password-stdin
-    - name: Docker Publish
-      run: docker push nikosnikolaidis/test_cicd
+      run: |
+        docker build -t nikosnikolaidis/test_cicd:$(date +'%Y-%m-%d') .
+        echo ${{ secrets.DOCKER_TOKEN }} | docker login -u nikosnikolaidis --password-stdin
+        docker push nikosnikolaidis/test_cicd
