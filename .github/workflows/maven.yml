@@ -31,4 +31,4 @@ jobs:
       run: |
         docker build -t nikosnikolaidis/test_cicd:$(date +'%Y-%m-%d') .
         echo ${{ secrets.DOCKER_TOKEN }} | docker login -u nikosnikolaidis --password-stdin
-        docker push nikosnikolaidis/test_cicd
+        docker push nikosnikolaidis/test_cicd:$(date +'%Y-%m-%d')
